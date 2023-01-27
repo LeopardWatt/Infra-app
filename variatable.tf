@@ -1,15 +1,15 @@
-variatable "filename" {
+variable "filename" {
     default = "./pets.txt"
 }
-variatable "content" {
-    default = "We love pets!"
+variable "content" {
+    default = "We favorite pet is Mrs_ Rocky"
 }
-variatable "prefix" {
+variable "prefix" {
     default = "Mrs"
 }
-variatable "separator" { 
+variable "separator" { 
     default = "_"
 }
-variatable "length" {
-    default = "1"
+variable "length" {
+    default = "2"
 }
