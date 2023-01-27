@@ -1,2 +1,2 @@
 # Infra-app
-teraaform_hometask1
+terraform_hometask1
