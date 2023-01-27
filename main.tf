@@ -1,11 +1,11 @@
 resource "local_file" "pet" {
-filename = "./pets.txt"
-content = "We love pets!"
-file_permission = "0700"
+filename = "var.filename"
+content = "var.content"
+
 }
 
 resource "random_pet" "my-pet" {
-prefix = "Mrs"
-separator = "_"
-length = "1"
+prefix = "var.prefix"
+separator = "var.separator"
+length = "var.length"
 }
