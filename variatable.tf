@@ -1,12 +1,12 @@
 variable "filename" {
-    default = "./pets.txt"
+  default = "./pets.txt"
 }
 variable "prefix" {
-    default = "Mrs"
+  default = "Mrs"
 }
-variable "separator" { 
-    default = "_"
+variable "separator" {
+  default = "_"
 }
 variable "length" {
-    default = "1"
+  default = "1"
 }
