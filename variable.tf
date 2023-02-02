@@ -1,8 +1,8 @@
 variable "aws_access_key" { 
-default = "AKIA36AADS5SO4CfhfhgT2GX2"
+default = "zerokey"
 }
 variable "aws_secret_key" {
-default = "FQD5D8MqRbdOrAaGvJrW8kAO8rZqDEykfhfgh94bLtPKT"
+default = "zerokey"
 }
 provider "aws" {
 region = "eu-central-1"
