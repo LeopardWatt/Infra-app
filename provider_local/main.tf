@@ -1,10 +1,23 @@
+terraform {
+    required_providers {
+        local = {
+            source = "hashicorp/local"
+            version = "2.2.2"
+        }
+    }
+}
 resource "local_file" "pet" {
   filename = var.filename
   content  = "My favorite pet is ${random_pet.my-pet.id}"
-
+  file_permission = "0700"
+  
+  lifecycle {
+    create_before_destroy = true
+  }
   depends_on = [
     random_pet.my-pet
   ]
+
 }
 
 resource "random_pet" "my-pet" {
