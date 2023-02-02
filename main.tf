@@ -1,6 +1,6 @@
 
 
-resource "aws_instance" "my_Ubuntu" {
+resource "aws_instance" "My_Ubuntu_Terraform" {
   ami           = "ami-03e08697c325f02ab"
   instance_type = "t2.micro"
 
