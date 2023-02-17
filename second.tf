@@ -37,6 +37,7 @@ variable "private_subnet_cidrs" {
  description = "Private Subnet CIDR values"
  default     = ["192.168.0.64/26"]
 }
+
 # Create Internet Gateway
 resource "aws_internet_gateway" "gw" {
  vpc_id = aws_vpc.main.id
@@ -47,8 +48,8 @@ resource "aws_internet_gateway" "gw" {
 }
 
 # Create NAT_gateway
-resource "aws_nat_gateway" "gw" {
-  allocation_id = aws_eip.nat.id
+resource "aws_nat_gateway" "gw"  {
+  allocation_id = "aws_vpc" "main"        
   subnet_id     = aws_subnet.example.id
 
   tags = {
