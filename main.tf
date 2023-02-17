@@ -36,7 +36,7 @@ resource "aws_subnet" "like_home_subnet" {
 # Connect EC2 to Network_AZ1
 resource "aws_network_interface" "like_home_interface" {
   subnet_id   = "${aws_subnet.like_home_subnet.id}"
-  private_ips = ["192.168.112.100","192.168.112.101","192.168.112.102"]
+ # private_ips = ["192.168.112.100","192.168.112.101","192.168.112.102"]
 
   tags = {
   Name = "primary_network_interface"
@@ -47,11 +47,12 @@ resource "aws_network_interface" "like_home_interface" {
 resource "aws_instance" "Bastion_Instance" {
   ami           = "ami-03e08697c325f02ab"
   instance_type = "t2.micro"
+  private_ip = "192.168.112.1"
 
-  network_interface {
-  network_interface_id = "${aws_network_interface.like_home_interface.id}"
-  device_index         = 0
-  }
+  #network_interface {
+  #network_interface_id = "${aws_network_interface.like_home_interface.id}"
+  #device_index         = 0
+  #}
 
   tags = {
     Name    = "Bastion_Instance"
@@ -64,11 +65,12 @@ resource "aws_instance" "Bastion_Instance" {
 resource "aws_instance" "CI_CD-Instance" {
   ami           = "ami-03e08697c325f02ab"
   instance_type = "t2.micro"
+  private_ip = "192.168.112.2"
 
-  network_interface {
-  network_interface_id = "${aws_network_interface.like_home_interface.id}"
-  device_index         = 0
-  }
+  #network_interface {
+  #network_interface_id = "${aws_network_interface.like_home_interface.id}"
+  #device_index         = 0
+  #}
 
   tags = {
     Name    = "CI_CD-Instance"
@@ -81,11 +83,12 @@ resource "aws_instance" "CI_CD-Instance" {
 resource "aws_instance" "Working_Horse" {
   ami           = "ami-03e08697c325f02ab"
   instance_type = "t2.micro"
+  private_ip = "192.168.112.3"
 
-  network_interface {
-  network_interface_id = "${aws_network_interface.like_home_interface.id}"
-  device_index         = 0
-  }
+  #network_interface {
+  #network_interface_id = "${aws_network_interface.like_home_interface.id}"
+  #device_index         = 0
+  #}
 
   tags = {
     Name    = "Working_Horse"
