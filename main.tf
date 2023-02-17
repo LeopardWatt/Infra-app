@@ -32,16 +32,16 @@ resource "aws_subnet" "like_home_subnet" {
   }
 }
 
+
 # Connect EC2 to Network_AZ1
 resource "aws_network_interface" "like_home_interface" {
   subnet_id   = "${aws_subnet.like_home_subnet.id}"
-  private_ips = ["192.168.112.100"]
+  private_ips = ["192.168.112.100","192.168.112.101","192.168.112.102"]
 
   tags = {
   Name = "primary_network_interface"
   }
 }
-
 
 # 01_Create a EC2 Bastion_Instance
 resource "aws_instance" "Bastion_Instance" {
