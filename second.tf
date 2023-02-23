@@ -68,7 +68,7 @@ resource "aws_internet_gateway" "gw" {
 resource "aws_instance" "Bastion_Instance" {
   ami           = "ami-03e08697c325f02ab"
   instance_type = "t2.micro"
-  private_ip = "192.168.0.70"
+  #private_ip = "192.168.0.70"
 
   #network_interface {
   #network_interface_id = "${aws_network_interface.like_home_interface.id}"
@@ -86,7 +86,7 @@ resource "aws_instance" "Bastion_Instance" {
 resource "aws_instance" "CI_CD-Instance" {
   ami           = "ami-03e08697c325f02ab"
   instance_type = "t2.micro"
-  private_ip = "192.168.0.80"
+  #private_ip = "192.168.0.80"
 
   #network_interface {
   #network_interface_id = "${aws_network_interface.like_home_interface.id}"
@@ -104,7 +104,7 @@ resource "aws_instance" "CI_CD-Instance" {
 resource "aws_instance" "Working_Horse" {
   ami           = "ami-03e08697c325f02ab"
   instance_type = "t2.micro"
-  private_ip = "192.168.0.90"
+  #private_ip = "192.168.0.90"
 
   #network_interface {
   #network_interface_id = "${aws_network_interface.like_home_interface.id}"
